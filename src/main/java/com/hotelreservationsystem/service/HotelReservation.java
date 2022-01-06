@@ -13,13 +13,13 @@ public class HotelReservation implements HotelReservationInterface {
     ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
     Hotel hotel;
 
-    public void addHotel(String hotelName, int rating, double regularCustomerRate) {
+    public void addHotel(String hotelName, int rating, double weekdayRegularCustomerCost, double weekendRegularCustomerCost) {
 
         hotel = new Hotel();
         hotel.setHotelName(hotelName);
         hotel.setRating(rating);
-        hotel.setRegularCustomerCost(regularCustomerRate);
-
+        hotel.setWeekdayRegularCustomerCost(weekdayRegularCustomerCost);
+        hotel.setWeekendRegularCustomerCost(weekendRegularCustomerCost);
         hotelList.add(hotel);
         System.out.println("Successfully ADDED !!");
     }
@@ -32,16 +32,17 @@ public class HotelReservation implements HotelReservationInterface {
         System.out.println(hotelList);
     }
 
-    public ArrayList<Hotel> getHotelList() {
+    public ArrayList<Hotel> getHotelList(){
         return hotelList;
     }
 
     public Hotel getCheapestHotel(LocalDate startDate, LocalDate endDate) {
 
         long numberOfDays = ChronoUnit.DAYS.between(startDate, endDate);
-        Optional<Hotel> sortedHotelList = hotelList.stream().min(Comparator.comparing(Hotel::getRegularCustomerCost));
+        Optional<Hotel> sortedHotelList = hotelList.stream().min(Comparator.comparing(Hotel::getWeekdayRegularCustomerCost));
         return sortedHotelList.get();
     }
+
 }
 
 
