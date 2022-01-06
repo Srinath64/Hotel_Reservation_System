@@ -1,4 +1,4 @@
-package com.hotelreservationsystem;
+package com.hotelreservationsystem.service;
 
 public class HotelReservationMain {
     public static void main(String[] args) {

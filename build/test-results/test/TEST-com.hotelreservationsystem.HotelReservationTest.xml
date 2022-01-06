@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hotelreservationsystem.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-06T08:58:31" hostname="Srinaths-MacBook-Air.local" time="0.041">
+<testsuite name="com.hotelreservationsystem.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-06T09:55:25" hostname="Srinaths-MacBook-Air.local" time="0.065">
   <properties/>
-  <testcase name="givenHotelDetails_WhenValuesEnteredAreCorrect_ShouldReturnTrue()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.041"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="givenHotelDetails_shouldReturnCheapestHotel()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.065"/>
+  <system-out><![CDATA[Successfully ADDED !!
+Successfully ADDED !!
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
