@@ -14,7 +14,6 @@ import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-
 public class HotelReservation implements HotelReservationInterface {
 
     public static Scanner scannerObject = new Scanner(System.in);
