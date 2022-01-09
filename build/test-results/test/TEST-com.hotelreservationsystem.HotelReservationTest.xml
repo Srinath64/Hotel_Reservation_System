@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hotelreservationsystem.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-07T08:27:00" hostname="Srinaths-MacBook-Air.local" time="0.029">
+<testsuite name="com.hotelreservationsystem.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-09T08:03:11" hostname="Srinaths-MacBook-Air.local" time="0.075">
   <properties/>
-  <testcase name="givenHotelList_WhenAdded_shouldReturnProperHotelRating()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.029"/>
+  <testcase name="givenHotelDetails_WhenHotelPricesAreSame_shouldReturnHighestRatedHotel()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.075"/>
   <system-out><![CDATA[Successfully ADDED !!
+Successfully ADDED !!
+Cheap Hotel : 
+Lakewood, Total Rates: 200.0
+Cheap Hotel : 
+Bridgewood, Total Rates: 200.0
+Cheapest Best Rated Hotel : 
+Bridgewood, Total Rates: 200.0
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
