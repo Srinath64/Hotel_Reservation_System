@@ -11,7 +11,7 @@ import java.time.Month;
 
 public class HotelReservationTest {
     @Test
-    public void givenHotelDetails_getCheapestHotel_shouldReturnHighestRatedHotel(){
+    public void givenHotelDetails_shouldReturnHighestRatedCheapestHotel(){
 
         HotelReservation hotelReservation = new HotelReservation();
         hotelReservation.addHotel("Lakewood", 3, 110, 90);
