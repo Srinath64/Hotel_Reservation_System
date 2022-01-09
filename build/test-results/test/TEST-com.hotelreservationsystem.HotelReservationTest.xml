@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hotelreservationsystem.HotelReservationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-09T08:14:15" hostname="Srinaths-MacBook-Air.local" time="0.056">
+<testsuite name="com.hotelreservationsystem.HotelReservationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-09T08:19:54" hostname="Srinaths-MacBook-Air.local" time="0.083">
   <properties/>
-  <testcase name="givenHotelDetails_shouldReturnHighestRatedHotel()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.056"/>
+  <testcase name="givenHotelList_WhenAdded_shouldReturnProperHotelWeekendRewardCustomerCost()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.075"/>
+  <testcase name="givenHotelList_WhenAdded_shouldReturnProperHotelWeekdayRewardCustomerCost()" classname="com.hotelreservationsystem.HotelReservationTest" time="0.006"/>
   <system-out><![CDATA[Successfully ADDED !!
+[Hotels [hotelName=Bridgewood, rating=4, Regular Customer WeekDay Cost=150.0Regular Customer WeekDay Cost=150.0, Reward Customer WeekDay Cost=110.0Reward Customer WeekDay Cost=50.0]
+]
 Successfully ADDED !!
-Successfully ADDED !!
-Best Rated Hotel : 
-Ridgewood, Total Rates: 370.0
+[Hotels [hotelName=Bridgewood, rating=4, Regular Customer WeekDay Cost=150.0Regular Customer WeekDay Cost=150.0, Reward Customer WeekDay Cost=110.0Reward Customer WeekDay Cost=50.0]
+]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
