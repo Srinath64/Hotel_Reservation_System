@@ -6,7 +6,7 @@ public class HotelReservationException extends RuntimeException{
         ENTERED_NULL, ENTERED_EMPTY;
     }
 
-    ExceptionType type;
+    public ExceptionType type;
 
     public HotelReservationException(ExceptionType type, String message) {
 
