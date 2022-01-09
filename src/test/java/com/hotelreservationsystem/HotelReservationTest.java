@@ -1,32 +1,69 @@
 package com.hotelreservationsystem;
 
-import com.hotelreservationsystem.model.Hotel;
+import com.hotelreservationsystem.Exception.HotelReservationException;
 import com.hotelreservationsystem.service.HotelReservation;
-import com.hotelreservationsystem.service.HotelReservationInterface;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
-import java.time.Month;
 
 
 public class HotelReservationTest {
     @Test
-    public void givenHotelList_WhenAdded_shouldReturnProperHotelWeekdayRewardCustomerCost() {
-        HotelReservationInterface hotelReservation = new HotelReservation();
-        hotelReservation.addHotel("Bridgewood", 4, 150, 50, 110, 50);
-        int hotelRewardCustomerCost = (int) hotelReservation.getHotelList().get(0).getWeekdayRewardCustomerCost();
-        hotelReservation.printHotelList();
-        Assertions.assertEquals(110, hotelRewardCustomerCost);
+    public void givenDate_WhenNotProperFormat_ShouldReturnFalse() {
+
+        HotelReservation hotelReservation = new HotelReservation();
+        boolean isNotVAlid = hotelReservation.validateDate("19-10-1999");
+        Assertions.assertFalse(isNotVAlid);
     }
 
     @Test
-    public void givenHotelList_WhenAdded_shouldReturnProperHotelWeekendRewardCustomerCost() {
-        HotelReservationInterface hotelReservation = new HotelReservation();
-        hotelReservation.addHotel("Bridgewood", 4, 150, 50, 110, 50);
-        int hotelRegularCustomerCost = (int) hotelReservation.getHotelList().get(0).getWeekendRewardCustomerCost();
-        hotelReservation.printHotelList();
-        Assertions.assertEquals(50, hotelRegularCustomerCost);
+    public void givenDate_WhenSeperatedBySlashes_ShouldReturnFalse() {
+
+        HotelReservation hotelReservation = new HotelReservation();
+        boolean isNotVAlid = hotelReservation.validateDate("1999/09/2021");
+        Assertions.assertFalse(isNotVAlid);
     }
 
+    @Test
+    public void givenDate_WhenContainsCharcters_ShouldReturnFalse() {
+
+        HotelReservation hotelReservation = new HotelReservation();
+        boolean isNotVAlid = hotelReservation.validateDate("200s-a2-19");
+        Assertions.assertFalse(isNotVAlid);
+    }
+
+    @Test
+    public void givenDate_WhenSpecialCharcters_ShouldReturnFalse() {
+
+        HotelReservation hotelReservation = new HotelReservation();
+        boolean isNotVAlid = hotelReservation.validateDate("2009/%%/13");
+        Assertions.assertFalse(isNotVAlid);
+    }
+
+    @Test
+    public void givenDate_WhenNull_ShouldThrowHotelReservationException() {
+
+        HotelReservation hotelReservation = new HotelReservation();
+        try {
+            String date = null;
+            hotelReservation.validateDate(date);
+        }
+        catch(HotelReservationException e){
+            Assertions.assertEquals(HotelReservationException.ExceptionType.ENTERED_NULL,e.type);
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenDate_WhenEmpty_ShouldThrowHotelReservationException() {
+
+        HotelReservation hotelReservation = new HotelReservation();
+        try {
+            String date = "";
+            hotelReservation.validateDate(date);
+        }
+        catch(HotelReservationException e){
+            Assertions.assertEquals(HotelReservationException.ExceptionType.ENTERED_EMPTY,e.type);
+            e.printStackTrace();
+        }
+    }
 }
